@@ -1,0 +1,41 @@
+<h1 style="text-align: center;">register</h1>
+<mat-card>
+  <form (submit)="onRegister(registerForm)" #registerForm="ngForm" autocomplete="off">
+  <mat-form-field>
+    <input
+    matInput
+    name="username"
+    ngModel
+    type="text"
+    placeholder="Username"
+    #usernameInput="ngModel"
+    required
+    user>
+    <mat-error *ngIf="usernameInput.invalid">Please enter a valid user.</mat-error>
+  </mat-form-field>
+<mat-form-field>
+  <input
+    matInput
+    name="password"
+    ngModel
+    [type]="hide ? 'password' : 'text'"
+    placeholder="Password"
+    #passwordInput="ngModel"
+    required>
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+    <mat-error *ngIf="passwordInput.invalid">Please enter a valid password.</mat-error>
+</mat-form-field>
+<button
+  mat-raised-button
+  color="primary"
+  type="submit">Submit
+</button>
+</form>
+<button
+mat-button (click)="backButton()">
+Back
+</button>
+</mat-card>
+

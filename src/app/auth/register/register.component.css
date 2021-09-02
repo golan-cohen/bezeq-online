@@ -1,0 +1,9 @@
+mat-form-field, button {
+  width: 100%;
+  margin-top: 25px;
+}
+mat-card{
+  background-color: rgb(223, 219, 219);
+  border: 2px solid gray;
+  border-radius: 10px;
+}

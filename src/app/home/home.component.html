@@ -1,0 +1,18 @@
+
+
+<div class="card bg-secondary">
+  <div class="card-header"><h1 style="text-align: center;">Bezeq online</h1></div>
+  <div class="card-body">
+    <div class="text-center">
+      <button [disabled]="currectUser && currectUser.index != 'index1' " (click)="index1Toggle()"
+      style="margin: 2%;"
+      [ngClass]="currectUser && currectUser.index == 'index1' ? 'btn btn-success btn-lg' : 'btn btn-primary btn-lg'">Index1</button>
+      <button [disabled]="currectUser && currectUser.index != 'index2' " (click)="index2Toggle()"
+      [ngClass]="currectUser && currectUser.index == 'index2' ? 'btn btn-success btn-lg' : 'btn btn-primary btn-lg'">Index2</button>
+      <div *ngIf="currectUser != null">
+      <br>
+      <h2 style="color: green;">You are connected!</h2>
+    </div>
+    </div>
+  </div>
+</div>
